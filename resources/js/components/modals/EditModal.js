@@ -64,7 +64,7 @@ class EditModal extends Component
 
             setTimeOut(() => {
                 location.reload();
-            },2500);
+            },3000);
         });    
     }
 

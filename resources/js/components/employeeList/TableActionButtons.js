@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ViewModal from '../modals/ViewModal';
 import EditModal from '../modals/EditModal';
+import DeleteModal from '../modals/DeleteModal';
 
 class TableActionButtons extends Component
 {
@@ -47,7 +48,13 @@ class TableActionButtons extends Component
                 Edit
                 </button>
                 <EditModal modalId={ this.props.eachRowId } employeeData={ this.state }/>
-                <button type="button" className="btn btn-danger">Delete</button>
+                {/*Deletar*/}
+                <button type="button" className="btn btn-danger"
+                        data-bs-toggle="modal" data-bs-target={"#deleteModal"+this.props.eachRowId} 
+                        onClick={ () => { this.getEmployeeDetails(this.props.eachRowId) }}>
+                Delete
+                </button>
+                <DeleteModal modalId={ this.props.eachRowId } employeeData={ this.state }/>
             </div>
         );                                
     }

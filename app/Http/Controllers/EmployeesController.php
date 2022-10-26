@@ -32,7 +32,7 @@ class EmployeesController extends Controller
     }
 
     // Atualiza os dados do funcionário
-    public function editEmployeeData(Request $request){
+    public function editEmployeeData(Employee $employee){
         try{
             $employeeId     = $request->get('employeeId');
             $employeeName   = $request->get('employeeName');
@@ -49,6 +49,16 @@ class EmployeesController extends Controller
             ]);
 
         }catch(Exception $e){
+            Log::error($e);
+        }
+    }
+
+    // Apaga um funcionário
+    public function deleteEmployeeData(Employee $employee){
+        try{
+            $employee->delete();
+
+        }catch(Exception $e) {
             Log::error($e);
         }
     }
