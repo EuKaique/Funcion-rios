@@ -31,6 +31,26 @@ class EmployeesController extends Controller
         }
     }
 
+    // Cria um novo funcionário
+    public function storeEmployeeData(Request $request){
+        try {
+            $employeeName   = $request->get('employeeName');
+            $employeeSalary = $request->get('employeeSalary');
+
+            Employee::create([
+                'name'   => $employeeName,
+                'salary' => $employeeSalary
+            ]);
+
+            return response()->json([
+                'name' => $employeeName,
+                'salary' => $employeeSalary
+            ]);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
+
     // Atualiza os dados do funcionário
     public function editEmployeeData(Employee $employee){
         try{

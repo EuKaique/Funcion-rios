@@ -80,10 +80,10 @@ class EditModal extends Component
                         <div className="modal-body">
                             <form className="form">
                                 <div className="form-group">
-                                    <input type="text" id="name" name="name" value={this.state.employeeName ?? ""} onChange={this.inputEmployeeName}/>
+                                    <input type="text" id="name" className="form-control mb-2" name="name" value={this.state.employeeName ?? ""} onChange={this.inputEmployeeName}/>
                                 </div>
                                 <div className="form-group">
-                                    <input type="text" id="salary" name="salary" value={this.state.employeeSalary ?? ""} onChange={this.inputEmployeeSalary}/>
+                                    <input type="text" id="salary" className="form-control mb-2" name="salary" value={this.state.employeeSalary ?? ""} onChange={this.inputEmployeeSalary}/>
                                 </div>
                                 <div className="modal-footer">
                                     <input type="submit" className="btn btn-success" value="Editar" onClick={this.editEmployeeData}/>
